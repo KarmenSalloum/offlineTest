@@ -37,6 +37,7 @@ namespace OfflineTest
             services.AddControllersWithViews();
 
             services.AddServices();
+            services.AddProgressiveWebApp();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
