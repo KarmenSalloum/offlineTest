@@ -1,0 +1,38 @@
+﻿@model List<Book>
+
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary mb-3" asp-controller="Books" asp-action="Create">Add New</a>
+        <table class="table table-bordered table-striped text-center">
+            <thead>
+                <tr>
+                    <th width="30%">Book Name</th>
+                    <th>Desc</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Book book in Model)
+                {
+                    <tr>
+                        <td>@book.BookName</td>
+                        <td>@book.Desc</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    @if (TempData["addData"] != null)
+    {
+        <partial name="_Notificatons" />
+    }
+    @if(TempData["syncData"] != null)
+    {
+        <script>
+            toastr.success('Sync Data', 'Sync');
+        </script>
+
+    }
+}

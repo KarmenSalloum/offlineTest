@@ -1,0 +1,28 @@
+﻿@model Book
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" asp-controller="Books" asp-action="Create">
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="BookName">Book Name</label>
+                    <input asp-for="BookName" class="form-control" placeholder="Book Name" required />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="Desc"></label>
+                    <textarea asp-for="Desc" class="form-control" required></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a class="btn btn-primary" asp-controller="Books" asp-action="Index">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
